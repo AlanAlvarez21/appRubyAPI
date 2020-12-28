@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Datos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>capital</th>
+      <th>Region</th>
+      <th>Population</th>
+      <th>Borders</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datos.each do |dato| %>
+      <tr>
+        <td><%= dato["name"] %></td>
+        <td><%= dato["capital"] %></td>
+        <td><%= dato["region"] %></td>
+        <td><%= dato["population"] %></td>
+        <td><%= dato["borders"] %></td>
+      
+        <td><%= link_to 'Destroy', dato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dato', new_dato_path %>
